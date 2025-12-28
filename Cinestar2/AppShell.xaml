@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Cinestar2"
+       x:Class="Cinestar2.AppShell">
+
+    <TabBar>
+
+        <!-- POČETNA -->
+        <ShellContent
+            Title="Početna"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate local:MainPage}" />
+
+        <!-- KATEGORIJE -->
+        <ShellContent
+            Title="Kategorije"
+            Icon="menu.png"
+            ContentTemplate="{DataTemplate local:Kategorije}" />
+
+        <!-- ULAZNICE -->
+        <ShellContent
+            Title="Ulaznice"
+            Icon="ticket.png"
+            ContentTemplate="{DataTemplate local:Ulaznice}" />
+
+        <!-- PROFIL -->
+        <ShellContent
+            Title="Profil"
+            Icon="user.png"
+            ContentTemplate="{DataTemplate local:Korisnikovprofil}" />
+
+    </TabBar>
+</Shell>
+

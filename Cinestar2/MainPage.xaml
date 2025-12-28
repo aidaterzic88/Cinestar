@@ -1,0 +1,91 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinestar2.MainPage">
+
+    <ScrollView BackgroundColor="#051851">
+        <VerticalStackLayout >
+
+            <Grid BackgroundColor="#051851" HeightRequest="60" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="logo1.png"
+                       HeightRequest="200"
+                       WidthRequest="120"
+                       VerticalOptions="Center"
+                       Margin="10,0"
+                       Grid.Column="0"/>
+
+                <Picker Title="Izaberi grad"
+                        TitleColor="White"
+                        Grid.Column="2"
+                        VerticalOptions="Center"
+                        Margin="0,0,10,0"
+                        >
+                    <Picker.Items>
+                        <x:String>Sarajevo</x:String>
+                        <x:String>Mostar</x:String>
+                        <x:String>Tuzla</x:String>
+                        <x:String>Banja Luka</x:String>
+                    </Picker.Items>
+                </Picker>
+           
+            </Grid>
+            <BoxView HeightRequest="1" 
+              BackgroundColor="Gray" 
+              HorizontalOptions="FillAndExpand" 
+              Margin="0,5"/>
+            <Image Source="dotnet_bot.png"/>
+            <Label Text="NAZIV FILMA
+                                 2h 30 min"
+                   TextColor="White"
+                   FontSize="24"
+                   HorizontalOptions="Start"
+                   Margin="20,20,0,0"/>
+            <BoxView HeightRequest="1" 
+             BackgroundColor="Gray" 
+             HorizontalOptions="FillAndExpand" 
+             Margin="0,5"/>
+            <Label Text="EXTREME    REALD 3D" Margin="5" Padding="5" HorizontalOptions="Center" TextColor="White"/>
+            <BoxView HeightRequest="1" 
+             BackgroundColor="Gray" 
+             HorizontalOptions="FillAndExpand" 
+             Margin="0,5"/>
+            <Label Text="NA PROGRAMU" TextColor="White" Margin="10" Padding="5" FontSize="17"/>
+            <Grid RowSpacing="20" ColumnSpacing="20" Padding="15" Margin="5" >
+                    <!-- Definiši 3 reda -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Definiši 2 kolone -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Red 1 -->
+                   
+                        <Image Source="film1spuzva.jpg" Grid.Row="0" Grid.Column="0" HeightRequest="250" Aspect="AspectFill" />
+           
+                    <Image Source="film2.jpg" Grid.Row="0" Grid.Column="1" HeightRequest="250" Aspect="AspectFill"/>
+
+                    <!-- Red 2 -->
+                    <Image Source="film3anakonda.jpg" Grid.Row="1" Grid.Column="0" HeightRequest="250" Aspect="AspectFill"/>
+                    <Image Source="film4elio.jpg" Grid.Row="1" Grid.Column="1" HeightRequest="250" Aspect="AspectFill"/>
+
+                    <!-- Red 3 -->
+                    <Image Source="film5trenutak.jpg" Grid.Row="2" Grid.Column="0" HeightRequest="250" Aspect="AspectFill" />
+                    <Image Source="film6.jpg" Grid.Row="2" Grid.Column="1" HeightRequest="250" Aspect="AspectFill"/>
+                </Grid>
+          
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
