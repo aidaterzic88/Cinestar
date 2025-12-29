@@ -1,0 +1,109 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinestar2.MainPage"
+             BackgroundColor="#051851">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <ScrollView Grid.Row="0" BackgroundColor="#051851">
+            <VerticalStackLayout Spacing="20">
+
+                <Grid BackgroundColor="#051851" HeightRequest="60">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="logoo.png"
+                           HeightRequest="70"
+                           WidthRequest="150"
+                           VerticalOptions="Center"
+                           Margin="1,20,1,0"
+                           Grid.Column="0"/>
+
+                    <Picker Title="Izaberi grad"
+                            TitleColor="White"
+                            TextColor="White"
+                            Grid.Column="2"
+                            VerticalOptions="Center"
+                            Margin="0,20,20,0">
+                        <Picker.Items>
+                            <x:String>Zenica</x:String>
+                            <x:String>Sarajevo</x:String>
+                            <x:String>Mostar</x:String>
+                            <x:String>Tuzla</x:String>
+                            <x:String>Banja Luka</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+
+                <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="Fill" Margin="0,5"/>
+
+                <Label Text="TRAILERI" TextColor="White" FontSize="20" Margin="15,10"/>
+
+                <ScrollView Orientation="Horizontal">
+                    <HorizontalStackLayout Spacing="15" Padding="15">
+
+                        <Grid WidthRequest="280" HeightRequest="170">
+                            <Image Source="fastfurious.jpg" Aspect="AspectFill"/>
+                            <BoxView BackgroundColor="#80000000" VerticalOptions="End" HeightRequest="50"/>
+                            <VerticalStackLayout VerticalOptions="End" Padding="10">
+                                <Label Text="The Fast and the Fourious" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="2h 30min" TextColor="White" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Grid WidthRequest="280" HeightRequest="170">
+                            <Image Source="film2.jpg" Aspect="AspectFill"/>
+                            <BoxView BackgroundColor="#80000000" VerticalOptions="End" HeightRequest="50"/>
+                            <VerticalStackLayout VerticalOptions="End" Padding="10">
+                                <Label Text="Formula I" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="1h 55min" TextColor="White" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Grid WidthRequest="280" HeightRequest="170">
+                            <Image Source="crazyrich.jpg" Aspect="AspectFill"/>
+                            <BoxView BackgroundColor="#80000000" VerticalOptions="End" HeightRequest="50"/>
+                            <VerticalStackLayout VerticalOptions="End" Padding="10">
+                                <Label Text="Crazy Rich Asians" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="2h 10min" TextColor="White" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </HorizontalStackLayout>
+                </ScrollView>
+
+                <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="Fill" Margin="0,5"/>
+                <Label Text="EXTREME REALD 3D" Margin="5" Padding="5" HorizontalOptions="Center" TextColor="White"/>
+                <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="Fill" Margin="0,5"/>
+                <Label Text="NA PROGRAMU" TextColor="White" Margin="10" Padding="5" FontSize="17"/>
+
+                <Grid RowSpacing="20" ColumnSpacing="20" Padding="15" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="film1spuzva.jpg" Grid.Row="0" Grid.Column="0" HeightRequest="250" Aspect="AspectFill"/>
+                    <Image Source="film2.jpg" Grid.Row="0" Grid.Column="1" HeightRequest="250" Aspect="AspectFill"/>
+                 
+                    <Image Source="film3anakonda.jpg" Grid.Row="1" Grid.Column="0" HeightRequest="250" Aspect="AspectFill"/>
+                    <Image Source="film4elio.jpg" Grid.Row="1" Grid.Column="1" HeightRequest="250" Aspect="AspectFill"/>
+                   
+                    <Image Source="film5trenutak.jpg" Grid.Row="2" Grid.Column="0" HeightRequest="250" Aspect="AspectFill"/>
+                    <Image Source="film6.jpg" Grid.Row="2" Grid.Column="1" HeightRequest="250" Aspect="AspectFill"/>
+
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
