@@ -42,5 +42,9 @@ namespace Cinestar2
         public string Godina { get; set; }
         public string Slika { get; set; }
         public string Kategorija { get; set; }
+        public string Trailer { get; internal set; }
+        public double Ocjena { get; internal set; }
+        public int Trajanje { get; internal set; }
+        public string Opis { get; internal set; }
     }
 }

@@ -8,12 +8,12 @@ namespace Cinestar2.Models
 {
     public class Film
     {
-        public required string Naziv { get; set; }
-        public required string Godina { get; set; }
-        public required string Slika { get; set; }
-        public required int Trajanje { get; set; }
-        public required double Ocjena { get; set; }
-        public required string Opis { get; set; }
-        public required string Trailer { get; set; }
+        public string Naziv { get; set; }
+        public string Godina { get; set; }
+        public string Slika { get; set; }
+        public int Trajanje { get; set; }
+        public double Ocjena { get; set; }
+        public string Opis { get; set; }
+        public string Trailer { get; set; }
     }
 }

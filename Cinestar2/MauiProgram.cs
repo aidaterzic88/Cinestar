@@ -16,6 +16,7 @@ namespace Cinestar2
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("93552c9a-4824-47e8-931c-d7b887d66cc6.ttf", "MojFont");
                 });
 
 #if DEBUG
