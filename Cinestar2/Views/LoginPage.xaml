@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Cinestar2.ViewModels"
+             x:Class="Cinestar2.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="30" Spacing="30" BackgroundColor="#051851">
+        <Image Source="logoo.png"/>
+        <Label Text="Prijavite se" FontSize="30" HorizontalOptions="Center" TextColor="#ffcd00" />
+
+        <Entry Placeholder="Korisničko ime" Text="{Binding Username}" FontSize="12" TextColor="White"/>
+
+        <Entry Placeholder="Lozinka" Text="{Binding Password}" IsPassword="True" FontSize="12" TextColor="White"/>
+
+        <Button Text="Prijava"
+        Command="{Binding LoginCommand}"
+        BackgroundColor="#ffcd00"
+        TextColor="#051851"
+        HeightRequest="50" />
+
+        <Label FontSize="12"
+       HorizontalOptions="Center"
+       TextColor="WhiteSmoke">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Nemate račun? " />
+                    <Span Text="Registruj se !"
+                  TextColor="#ffcd00"
+                  FontAttributes="Bold"
+                  TextDecorations="None">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+    </VerticalStackLayout>
+</ContentPage>
