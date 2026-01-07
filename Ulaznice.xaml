@@ -1,0 +1,125 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinestar2.Ulaznice"
+             BackgroundColor="#051851"
+             NavigationPage.HasBackButton="True">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <!-- TITLE -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Moje Ulaznice"
+                       FontSize="26"
+                       TextColor="White"
+                       FontAttributes="Bold"/>
+                <BoxView HeightRequest="3">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#FFD600" Offset="0.0"/>
+                            <GradientStop Color="Transparent" Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+            </VerticalStackLayout>
+
+            <!-- ================= KORPA / PREGLED ULAZNICA ================= -->
+            <CollectionView ItemsSource="{Binding MojeUlaznice}"
+                            ItemsLayout="VerticalList"
+                            Margin="0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#0A2A7A"
+                               CornerRadius="15"
+                               Padding="15"
+                               HasShadow="True"
+                               Margin="0,0,0,10">
+
+                            <VerticalStackLayout Spacing="10">
+
+                                <!-- FILM I TERMIN -->
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label Text="{Binding NazivFilma}" 
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           Grid.Column="0"/>
+                                    <Label Text="{Binding DatumVrijeme, StringFormat='{}{0:dd.MM.yyyy HH:mm}'}"
+                                           FontSize="14"
+                                           TextColor="#FFD600"
+                                           Grid.Column="1"/>
+                                </Grid>
+
+                                <!-- SALA I SJEDISTE -->
+                                <Label Text="{Binding Sala, StringFormat='Sala: {0}'}"
+                                       TextColor="White"/>
+                                <Label Text="{Binding Sjedista, StringFormat='Sjedista: {0}'}"
+                                       TextColor="White"/>
+
+                                <!-- CIJENA I STATUS -->
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label Text="{Binding Cijena, StringFormat='Cijena: {0} KM'}"
+                                           TextColor="White"
+                                           Grid.Column="0"/>
+                                    <Label Text="{Binding Status}" 
+                                           TextColor="{Binding StatusBoja}" 
+                                           FontAttributes="Bold"
+                                           Grid.Column="1"/>
+                                </Grid>
+
+                                <!-- BUTTON ZA OTKAŽI / PREGLED -->
+                                <HorizontalStackLayout Spacing="10">
+                                    <Button Text="Pregled"
+                                            Command="{Binding PregledCommand}"
+                                            BackgroundColor="#FFD600"
+                                            TextColor="Black"
+                                            CornerRadius="10"
+                                            FontSize="12"
+                                            HorizontalOptions="StartAndExpand"/>
+                                    <Button Text="Otkaži"
+                                            Command="{Binding OtkaziCommand}"
+                                            BackgroundColor="#FF4C4C"
+                                            TextColor="White"
+                                            CornerRadius="10"
+                                            FontSize="12"
+                                            HorizontalOptions="End"/>
+                                </HorizontalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- ================= UKUPNO ================= -->
+            <Frame BackgroundColor="#0A2A7A"
+                   CornerRadius="15"
+                   Padding="15"
+                   HasShadow="True"
+                   Margin="0,10,0,0">
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label Text="Ukupno:"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="StartAndExpand"/>
+                    <Label Text="{Binding UkupnaCijena, StringFormat='{}{0} KM'}"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#FFD600"
+                           HorizontalOptions="End"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- BUTTON ZA PLAĆANJE -->
+            <Button Text="Plaćanje"
+                    Command="{Binding PlatiCommand}"
+                    BackgroundColor="#FFD600"
+                    TextColor="Black"
+                    CornerRadius="15"
+                    FontSize="16"
+                    HeightRequest="50"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

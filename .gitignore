@@ -1,0 +1,16 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.log
+
+# Build output
+bin/
+obj/
+
+# NuGet paketi
+*.nupkg
+packages/
+
+# Ostalo
+*.dbmdl

@@ -1,0 +1,52 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinestar2.Romantika"
+             BackgroundColor="#051851">
+
+    <VerticalStackLayout Padding="15" Spacing="20">
+
+        <Label Text="Romantika"
+               FontSize="26"
+               Margin="20,10,10,0"
+               TextColor="White"
+               FontAttributes="Bold"/>
+        <BoxView HeightRequest="3">
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FFD600" Offset="0.0" />
+                    <GradientStop Color="Transparent" Offset="1.0"/>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <CollectionView x:Name="ListaFilmova"
+                        BackgroundColor="Transparent"
+                        SelectionMode="None"
+                        ItemsLayout="VerticalList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10"
+                           Padding="10"
+                           Margin="0,5"
+                           BackgroundColor="#2A3B6E"
+                           HasShadow="False">
+
+                        <HorizontalStackLayout Spacing="15">
+                            <Image Source="{Binding Slika}" WidthRequest="60" HeightRequest="90"/>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Naziv}" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="{Binding Godina}" TextColor="LightGray" FontSize="14"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+
+                        <!-- TapGesture za cijeli Frame -->
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Film_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
