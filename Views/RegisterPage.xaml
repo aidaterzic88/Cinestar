@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Cinestar2.ViewModels"
+             x:Class="Cinestar2.Views.RegisterPage"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="30" Spacing="30" BackgroundColor="#051851">
+        <Image Source="logoo.png"/>
+        <Label Text="Kreirajte račun" FontSize="32" HorizontalOptions="Center" TextColor="#ffcd00"/>
+
+        <Entry Placeholder="Korisničko ime" Text="{Binding Username}" FontSize="12" TextColor="White"/>
+
+        <Entry Placeholder="Lozinka" Text="{Binding Password}" IsPassword="True" FontSize="12" TextColor="White" />
+
+        <Entry Placeholder="Potvrdite lozinku" Text="{Binding ConfirmPassword}" IsPassword="True" FontSize="12" TextColor="White"/>
+
+        <Button Text="Registrujte se" Command="{Binding RegisterCommand}"  BackgroundColor="#ffcd00"
+        TextColor="#051851"
+        HeightRequest="50"/>
+
+    </VerticalStackLayout>
+</ContentPage>
