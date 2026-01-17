@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Cinestar2.Models"
+             x:Class="Cinestar2.Ulaznice"
+             BackgroundColor="#051851"
+             Title="Moje ulaznice">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Moje ulaznice"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+
+            <BoxView HeightRequest="3">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FFD600" Offset="0.0" />
+                        <GradientStop Color="Transparent" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <CollectionView ItemsSource="{Binding KupljeneUlaznice}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:KupljenaUlaznica">
+                        <Frame BorderColor="#fecd04"
+                               CornerRadius="10"
+                               Padding="10"
+                               Margin="0,10,0,0"
+                               BackgroundColor="Transparent">
+
+                            <Grid ColumnDefinitions="*,Auto">
+
+                                <VerticalStackLayout Spacing="5" Grid.Column="0">
+                                    <Label Text="{Binding Film}"
+                               TextColor="White"
+                               FontAttributes="Bold"/>
+
+                                    <Label Text="{Binding Kolicina, StringFormat='Broj karata: {0}'}"
+                               TextColor="White"/>
+
+                                    <Label Text="{Binding Iznos, StringFormat='{0} KM'}"
+                               TextColor="#fecd04"/>
+
+                                    <Label Text="{Binding KarticaMaskirana}"
+                               TextColor="White"/>
+                                </VerticalStackLayout>
+
+                                <ImageButton Grid.Column="1"
+                                 Source="trash.png"
+                                 BackgroundColor="Transparent"
+                                 WidthRequest="16"
+                                 HeightRequest="16"
+                                 CommandParameter="{Binding .}"
+                                 Clicked="ObrisiUlaznicu_Clicked"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
