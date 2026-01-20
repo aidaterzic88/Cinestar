@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Cinestar2.Converters"
+             x:Class="Cinestar2.AddCardPage"
+             BackgroundColor="#051851"
+             Title="Dodaj karticu">
+
+    <ContentPage.Resources>
+        <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
+    </ContentPage.Resources>
+ 
+      
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="25">
+
+            <Grid BackgroundColor="#051851" HeightRequest="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="logoo.png"
+                          HeightRequest="70"
+                          WidthRequest="150"
+                          VerticalOptions="Center"
+                          Margin="1,20,1,0"
+                          Grid.Column="0"/>
+
+                <Picker Title="Izaberi grad"
+                           ItemsSource="{Binding Gradovi}"
+                           SelectedItem="{Binding IzabraniGrad}"
+                           TitleColor="White"
+                           TextColor="White"
+                           FontSize="10"
+                           Grid.Column="2"
+                           VerticalOptions="Center"
+                           Margin="0,20,20,0">
+
+                </Picker>
+            </Grid>
+
+            <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="Fill" Margin="0,5"/>
+
+            <Frame CornerRadius="14"
+                   HeightRequest="200"
+                   BackgroundColor="#2C3E8C"
+                   IsVisible="{Binding HasCard, Converter={StaticResource InverseBoolConverter}}">
+                <Label Text="Dodaj karticu za brzo plaćanje"
+                       TextColor="LightGray"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <Frame CornerRadius="14"
+       Padding="0"
+       BackgroundColor="#1A2B6D"
+       IsVisible="{Binding HasCard}">
+                <Grid HeightRequest="200">
+                    <Image Source="creditcard.png"
+               Aspect="AspectFill"/>
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding QuickPayCommand}" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+
+
+            <Entry Placeholder="Ime na kartici" 
+                   Text="{Binding ImeNaKartici}" 
+                   TextColor="White"/>
+            <Entry Placeholder="Broj kartice" 
+                   Text="{Binding BrojKartice}" 
+                   Keyboard="Numeric" 
+                   TextColor="White"/>
+            <Entry Placeholder="CVV" 
+                   Text="{Binding CVV}" 
+                   Keyboard="Numeric" 
+                   TextColor="White"/>
+            <Entry Placeholder="Datum isteka (MM/YY)" 
+                   Text="{Binding DatumIsteka}" 
+                   TextColor="White"/>
+
+            <Button Text="Sačuvaj karticu"
+                    Command="{Binding SaveCardCommand}"
+                    BackgroundColor="#fecd04"
+                    TextColor="#051851"
+                    CornerRadius="10"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,71 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinestar2.Kategorije"
+             BackgroundColor="#051851">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Spacing="20">
+                <BoxView HeightRequest="1"
+                         BackgroundColor="Gray"
+                         HorizontalOptions="Fill"/>
+
+                 <VerticalStackLayout Spacing="10" Margin="15,0,0,5">
+                     <Label Text="Kategorije Filmova"
+                            TextColor="White"
+                            FontSize="26"
+                            Margin="0,10,10,0"
+                           
+                            FontAttributes="Bold"/>
+                    <BoxView HeightRequest="3">
+                        <BoxView.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#FFD600" Offset="0.0" />
+                                <GradientStop Color="Transparent" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </BoxView.Background>
+                    </BoxView>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+
+                    <Button Text="Akcija"
+            TextColor="White"
+            BackgroundColor="Transparent"
+            FontSize="17"
+            HorizontalOptions="Start"
+            Clicked="Akcija_Clicked"/>
+                    
+                    <BoxView HeightRequest="1" BackgroundColor="#2A3B6E"/>
+
+                    <Button Text="Komedija"
+            TextColor="White"
+            BackgroundColor="Transparent"
+            FontSize="17"
+            HorizontalOptions="Start"
+            Clicked="Komedija_Clicked"/>
+                    <BoxView HeightRequest="1" BackgroundColor="#2A3B6E"/>
+
+                    <Button Text="Romantika"
+            TextColor="White"
+            BackgroundColor="Transparent"
+            FontSize="17"
+            HorizontalOptions="Start"
+            Clicked="Romantika_Clicked"/>
+                    <BoxView HeightRequest="1" BackgroundColor="#2A3B6E"/>
+
+                    <Button Text="Animirani"
+            TextColor="White"
+            BackgroundColor="Transparent"
+            FontSize="17"
+            HorizontalOptions="Start"
+            Clicked="Animirani_Clicked"/>
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinestar2.Pages.Placanje"
+             BackgroundColor="#051851">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Label Text="Plaćanje"
+               FontSize="24"
+               TextColor="White"
+               FontAttributes="Bold"/>
+
+     
+        <Frame CornerRadius="12"
+               BackgroundColor="#1A2B6D"
+               HasShadow="False">
+
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="{Binding Film.Naziv}"
+                       TextColor="White"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+
+                <Label Text="Broj karata:"
+                       TextColor="LightGray"/>
+
+                <Label Text="{Binding BrojKarata}"
+                       TextColor="#fecd04"
+                       FontSize="16"/>
+
+                <Label Text="Ukupno za platiti:"
+                       TextColor="LightGray"/>
+
+                <Label Text="{Binding UkupnaCijena, StringFormat='{}{0} KM'}"
+                       FontSize="22"
+                       TextColor="#fecd04"
+                       FontAttributes="Bold"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame CornerRadius="14"
+       HeightRequest="120"
+       BackgroundColor="#2C3E8C"
+       IsVisible="{Binding HasCard, Converter={StaticResource InverseBoolConverter}}">
+
+            <Label Text="Dodaj karticu za brzo plaćanje"
+           TextColor="LightGray"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"/>
+        </Frame>
+
+        <Frame CornerRadius="14"
+       Padding="0"
+       BackgroundColor="#1A2B6D"
+       IsVisible="{Binding HasCard}">
+
+            <Grid HeightRequest="180">
+                <Image Source="creditcard.png"
+               Aspect="AspectFill"/>
+
+                <Label Text="{Binding SavedCard.MaskiraniBroj}"
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="20"
+               VerticalOptions="End"/>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding QuickPayCommand}" />
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Frame>
+
+        <Button Text="Plati"
+                BackgroundColor="#fecd04"
+                TextColor="#051851"
+                CornerRadius="10"
+                Clicked="Plati_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
