@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinestar2.Pages.Placanje"
+             BackgroundColor="#051851"
+             Title="Placanje">
+
+    <VerticalStackLayout Padding="25" Spacing="15">
+        <Label Text="Placanje karata" TextColor="White" FontSize="24" HorizontalOptions="Center"/>
+        <Label Text="{Binding Film}" TextColor="White" FontSize="20"/>
+        <Label Text="{Binding Kolicina}" TextColor="White"/>
+        <Label Text="{Binding Iznos}" TextColor="White"/>
+
+        <Button Text="Plati" Clicked="SpremiIPlati_Clicked"
+                BackgroundColor="#fecd04" TextColor="#051851" CornerRadius="10"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Cinestar2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Cinestar2.Views"
+    xmlns:local="clr-namespace:Cinestar2"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="#051851"
+    Shell.TabBarTitleColor="White"
+    Shell.TabBarUnselectedColor="#B0B0B0">
+
+    <ShellContent
+        Route="login"
+        ContentTemplate="{DataTemplate views:LoginPage}" />
+
+    <ShellContent
+        Route="register"
+        ContentTemplate="{DataTemplate views:RegisterPage}" />
+  
+    <TabBar Route="main">
+
+        <ShellContent
+            Title="Početna"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate local:MainPage}" />
+
+        <ShellContent
+            Title="Kategorije"
+            Icon="movie.png"
+            ContentTemplate="{DataTemplate local:Kategorije}" />
+
+        <ShellContent
+            Title="Ulaznice"
+            Icon="ticket.png"
+            ContentTemplate="{DataTemplate local:Ulaznice}" />
+
+        <ShellContent
+            Title="Profil"
+            Icon="profile.png"
+            ContentTemplate="{DataTemplate local:Korisnikovprofil}" />
+
+    </TabBar>
+    
+</Shell>

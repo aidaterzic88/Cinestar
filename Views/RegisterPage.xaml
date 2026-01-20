@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Cinestar2.ViewModels"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="Cinestar2.Views.RegisterPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#051851">
+
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="30" BackgroundColor="#051851">
+
+            <!-- LOGO -->
+            <Image Source="logoo.png"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Kreirajte račun"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   TextColor="#FFD600"
+                   FontAttributes="Bold"
+                  />
+
+            
+                <VerticalStackLayout Spacing="12">
+
+                    <Entry Placeholder="Korisničko ime"
+                           Text="{Binding Username}"
+                           TextColor="White"
+                           PlaceholderColor="#CCCCCC"
+                           FontSize="13"/>
+
+                    <Entry Placeholder="Ime i prezime"
+                           Text="{Binding ImePrezime}"
+                           TextColor="White"
+                           PlaceholderColor="#CCCCCC"
+                           FontSize="13"/>
+
+                    <Entry Placeholder="Grad"
+                           Text="{Binding Grad}"
+                           TextColor="White"
+                           PlaceholderColor="#CCCCCC"
+                           FontSize="13"/>
+
+                    <DatePicker Date="{Binding DatumRodjenja}"
+                                MaximumDate="{x:Static sys:DateTime.Today}"
+                                TextColor="White"/>
+
+                    <Entry Placeholder="Lozinka"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           TextColor="White"
+                           PlaceholderColor="#CCCCCC"
+                           FontSize="13"/>
+
+                    <Entry Placeholder="Potvrdite lozinku"
+                           Text="{Binding ConfirmPassword}"
+                           IsPassword="True"
+                           TextColor="White"
+                           PlaceholderColor="#CCCCCC"
+                           FontSize="13"/>
+
+                    <Button Text="Registrujte se"
+                            Command="{Binding RegisterCommand}"
+                            BackgroundColor="#FFD600"
+                            TextColor="#051851"
+                            HeightRequest="50"
+                            CornerRadius="12"
+                            FontAttributes="Bold"
+                            Margin="0,20,0,0"/>
+
+                </VerticalStackLayout>
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
